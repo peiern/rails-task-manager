@@ -1,0 +1,11 @@
+<%= form_for(@task) do |f| %>
+  <div style="margin: 20px;">
+    <%= f.label :title %>
+    <%= f.text_field :title, size: "60x10" %>
+  </div>
+  <div style="margin: 6px;">
+    <%= f.label :details %>
+    <%= f.text_field :details, size: "60x10" %>
+  </div>
+  <%= f.submit %>
+<% end %>
