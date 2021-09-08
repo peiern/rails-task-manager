@@ -1,1 +1,9 @@
-<p><%= @tasks.details %></p>
+<h1><%= @tasks.title %></h1>
+<p style="background-color: rgba(255, 255, 128, .5); padding: 10px;"><%= @tasks.details %></p>
+<div>
+<%= @true %>
+<%= @false %>
+</div>
+
+<br>
+<%= link_to 'Back to list', tasks_path %>
