@@ -6,12 +6,6 @@ class TasksController < ApplicationController
   end
 
   def show
-
-    if @task.completed? == true
-      @true = 'This task is completed'
-    else
-      @false = 'This task is not completed'
-    end
   end
 
   def new
@@ -44,6 +38,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 end

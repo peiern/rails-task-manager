@@ -3,9 +3,16 @@
     <%= f.label :title %>
     <%= f.text_field :title, size: "60x10" %>
   </div>
-  <div style="margin: 6px;">
+  <div style="margin: 4px;">
     <%= f.label :details %>
     <%= f.text_field :details, size: "60x10" %>
   </div>
+  <div style="marin: 20px;">
+    <% unless @task.new_record? %>
+      <%= f.check_box :completed %> Completed?
+    <% end %>
+  </div>
+  <div style="margin: 20px;">
   <%= f.submit %>
+  </div>
 <% end %>

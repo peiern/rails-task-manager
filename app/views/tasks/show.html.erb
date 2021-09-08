@@ -1,16 +1,21 @@
 <h1><%= @task.title %></h1>
 <p style="background-color: rgba(255, 255, 128, .5); padding: 10px;"><%= @task.details %></p>
 <div>
-<%= @true %>
-<%= @false %>
+
+<% if @task.completed %>
+  <i class="far fa-check-square" style="padding: 10px;"></i><%='This task is completed' %>
+<% else %>
+    <i class="far fa-square" style="padding: 10px;"></i><%='This task is not completed' %>
+<% end %>
 </div>
 
 <br>
-<%= link_to 'Back to list', tasks_path %>
+<span><i class="fas fa-hand-point-left" style="margin: 5px;"></i><%= link_to 'Back to list', tasks_path %></span>
 
-<%= link_to 'Edit task', edit_task_path %>
+<span><i class="fas fa-pencil-alt" style="margin: 5px;"></i><%= link_to 'Edit task', edit_task_path %></span>
 
+<span><i class="fas fa-dumpster" style="margin: 5px;"></i>
 <%= link_to "Delete task",
   task_path(@task),
   method: :delete,
-  data: { confirm: "Are you sure?" } %>
+  data: { confirm: "Are you sure?" } %></span>
